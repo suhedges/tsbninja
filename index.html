@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSBearing Ninja</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>TSBearing Ninja</h1>
+    </header>
+
+    <main>
+        <!-- Tab Links -->
+        <div class="tab-links">
+            <button class="tab-link active" onclick="openTab(event, 'Interchange')">Interchange</button>
+            <button class="tab-link" onclick="openTab(event, 'Tapered')">Tapered</button>
+            <button class="tab-link" onclick="openTab(event, 'All')">All</button>
+        </div>
+
+        <!-- Interchange Tab -->
+        <div id="Interchange" class="tab-content">
+            <h2>Search for Interchanges</h2>
+            <input type="text" id="partNumber" placeholder="Enter part number" oninput="searchPartNumbers()">
+            <button onclick="searchPartNumbers()">Search</button>
+
+            <h3>Interchanges and Possible Substitutes</h3>
+            <div id="interchangeResults" class="results-box"></div>
+
+            <h3>Similar Part Numbers</h3>
+            <div id="closeMatches" class="results-box"></div>
+        </div>
+
+        <!-- Tapered Tab -->
+        <div id="Tapered" class="tab-content" style="display:none;">
+            <h2>Tapered Bearings Search</h2>
+            <input type="text" id="boreDiameter" placeholder="Bore Diameter">
+            <input type="text" id="outsideDiameter" placeholder="Outside Diameter">
+            <input type="text" id="width" placeholder="Width">
+            <select id="unit">
+                <option value="mm">Millimeters</option>
+                <option value="in">Inches</option>
+            </select>
+            <button onclick="searchBearings()">Search</button>
+
+            <div id="taperedResults" class="results-box"></div>
+        </div>
+
+        <!-- All Tab -->
+        <div id="All" class="tab-content" style="display:none;">
+            <h2>Search All Bearings</h2>
+            <div id="allResults" class="results-box"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tri-State Bearing</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
